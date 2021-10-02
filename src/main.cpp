@@ -3,12 +3,14 @@
 #include <conio.h>
 #include <chrono>
 #include <thread>
+#include <fstream>
+#include <string>
 using namespace std;
 
 void set_cursor_click(int x, int y)
 {
     SetCursorPos(x, y);
-    Sleep(3000);
+    Sleep(300);
     mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
     mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
 }
@@ -105,33 +107,68 @@ void fill_name()
 {
     uppering_word('M');
     int firstname[8] = {0x55, 0x48, 0x41, 0x4D, 0x4D, 0x41, 0x44, 0x20};
-    for (int i = 0; i < sizeof(firstname); i++)
+    for (int i = 0; i < 8; i++)
     {
         send_key(firstname[i]);
-        Sleep(500);
+        Sleep(300);
     }
     uppering_word('R');
     int lastname[4] = {0x49, 0x5A, 0x51, 0x49};
-    for (int i = 0; i < sizeof(firstname); i++)
+    for (int i = 0; i < 4; i++)
     {
         send_key(lastname[i]);
-        Sleep(500);
+        Sleep(300);
     }
 }
 
 int main()
 {
-    system("start https://forms.gle/LQ5KL7XgZN7hrAKRA");
-    Sleep(7000);
+    system("start https://zoom.us/j/93843429498?pwd=VVR4UjlGejQwWkNhVFNVZ1FKb0ZUUT09");
+    Sleep(10000);
     send_key(0x09);
     Sleep(500);
     send_key(0x09);
     Sleep(500);
     send_key(0x09);
-    Sleep(1000);
-    // set_cursor_click(357, 640);
-    fill_niu();
+    Sleep(500);
+    send_key(0x0D);
+    Sleep(15000);
     send_key(0x09);
-    fill_name();
+    Sleep(500);
+    send_key(0x09);
+    Sleep(500);
+    send_key(0x09);
+    Sleep(500);
+    send_key(0x09);
+    Sleep(500);
+    send_key(0x0D);
+    Sleep(700);
+    set_cursor_click(504,353);
+    Sleep(200);
+    send_key(0x09);
+    Sleep(500);
+    send_key(0x09);
+    Sleep(500);
+    send_key(0x0D);
+    int p = 8;
+    // cin >> p;
+    // system("start https://forms.gle/LQ5KL7XgZN7hrAKRA");
+    // Sleep(7000);
+    // send_key(0x09);
+    // Sleep(500);
+    // send_key(0x09);
+    // Sleep(500);
+    // send_key(0x09);
+    // Sleep(1000);
+    // fill_niu();
+    // send_key(0x09);
+    // fill_name();
+    // send_key(0x09);
+    // for (int i = 0; i < p; i++)
+    // {
+    //     send_key(0x28);
+    // }
+    // send_key(0x09);
+    // send_key(0x09);
     return 0;
 }
