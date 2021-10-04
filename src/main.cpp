@@ -121,6 +121,24 @@ void fill_name()
     }
 }
 
+void maximize_window()
+{
+    keybd_event(VK_LWIN, 0, KEYEVENTF_EXTENDEDKEY, 0);
+    keybd_event(VK_UP, 0, KEYEVENTF_EXTENDEDKEY, 0);
+    keybd_event(VK_UP, 0, KEYEVENTF_KEYUP, 0);
+    keybd_event(VK_LWIN, 0, KEYEVENTF_KEYUP, 0);
+}
+
+void take_screenschot()
+{
+    keybd_event(VK_LWIN, 0, KEYEVENTF_EXTENDEDKEY, 0);
+    keybd_event(VK_SHIFT, 0, KEYEVENTF_EXTENDEDKEY, 0);
+    keybd_event(0x53, 0, KEYEVENTF_EXTENDEDKEY, 0);
+    keybd_event(0x53, 0, KEYEVENTF_KEYUP, 0);
+    keybd_event(VK_SNAPSHOT, 0, KEYEVENTF_KEYUP, 0);
+    keybd_event(VK_LWIN, 0, KEYEVENTF_KEYUP, 0);
+}
+
 int main()
 {
     system("start https://zoom.us/j/93843429498?pwd=VVR4UjlGejQwWkNhVFNVZ1FKb0ZUUT09");
@@ -139,17 +157,39 @@ int main()
     Sleep(500);
     send_key(0x09);
     Sleep(500);
-    send_key(0x09);
-    Sleep(500);
     send_key(0x0D);
-    Sleep(700);
-    set_cursor_click(504,353);
-    Sleep(200);
-    send_key(0x09);
     Sleep(500);
+    maximize_window();
+    SetCursorPos(400, 100);
+    mouse_event(MOUSEEVENTF_LEFTDOWN, 400, 100, 0, 0);
     send_key(0x09);
-    Sleep(500);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
     send_key(0x0D);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
+    send_key(0x09);
+    Sleep(100);
+    send_key(0x0D);
+    Sleep(100);
+    take_screenschot();
+    set_cursor_click(1145,555);
+    // Sleep(700);
+    // set_cursor_click(504,353);
+    // Sleep(200);
+    // send_key(0x09);
+    // Sleep(500);
+    // send_key(0x09);
+    // Sleep(500);
+    // send_key(0x0D);
     int p = 8;
     // cin >> p;
     // system("start https://forms.gle/LQ5KL7XgZN7hrAKRA");
@@ -157,6 +197,7 @@ int main()
     // send_key(0x09);
     // Sleep(500);
     // send_key(0x09);
+
     // Sleep(500);
     // send_key(0x09);
     // Sleep(1000);
